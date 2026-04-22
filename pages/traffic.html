@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Sources - Analytics Dashboard</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/traffic.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fas fa-chart-pie"></i>
+            <span>Analytics Hub</span>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="../index.html" class="nav-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="traffic.html" class="nav-item active">
+                <i class="fas fa-chart-line"></i>
+                <span>Traffic Sources</span>
+            </a>
+            <a href="visitors.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Visitor Types</span>
+            </a>
+            <a href="countries.html" class="nav-item">
+                <i class="fas fa-globe"></i>
+                <span>Countries & Cities</span>
+            </a>
+            <a href="conversion.html" class="nav-item">
+                <i class="fas fa-percent"></i>
+                <span>Conversion Pages</span>
+            </a>
+            <a href="reports.html" class="nav-item">
+                <i class="fas fa-file-alt"></i>
+                <span>Reports</span>
+            </a>
+        </nav>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <header class="top-header">
+            <div class="page-title">
+                <h1>Traffic Sources 📊</h1>
+                <p>Analyze where your visitors are coming from</p>
+            </div>
+            <div class="user-info">
+                <i class="fas fa-bell"></i>
+                <div class="user-avatar">
+                    <span>AD</span>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Traffic Sources Grid -->
+        <div class="traffic-grid">
+            
+            <!-- Donut Chart Card -->
+            <div class="stats-card chart-card">
+                <h3><i class="fas fa-chart-pie"></i> Traffic Distribution</h3>
+                <canvas id="trafficDonutChart"></canvas>
+            </div>
+            
+            <!-- Traffic Details Card -->
+            <div class="stats-card">
+                <h3><i class="fas fa-list"></i> Sources Details</h3>
+                <div class="traffic-details" id="trafficDetails">
+                    <!-- Will be added by JS -->
+                </div>
+            </div>
+            
+            <!-- Traffic Over Time Card -->
+            <div class="stats-card chart-card full-width">
+                <h3><i class="fas fa-chart-line"></i> Traffic Over Time</h3>
+                <canvas id="trafficLineChart"></canvas>
+            </div>
+            
+        </div>
+        
+    </main>
+</div>
+
+<script src="../js/data.js"></script>
+<script src="../js/traffic.js"></script>
+<script src="../js/common.js"></script>
+
+</body>
+</html>

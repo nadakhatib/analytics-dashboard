@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion Pages - Analytics Dashboard</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/conversion.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+    
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fas fa-chart-pie"></i>
+            <span>Analytics Hub</span>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="../index.html" class="nav-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="traffic.html" class="nav-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Traffic Sources</span>
+            </a>
+            <a href="visitors.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Visitor Types</span>
+            </a>
+            <a href="countries.html" class="nav-item">
+                <i class="fas fa-globe"></i>
+                <span>Countries & Cities</span>
+            </a>
+            <a href="conversion.html" class="nav-item">
+                <i class="fas fa-percent"></i>
+                <span>Conversion Pages</span>
+            </a>
+            <a href="reports.html" class="nav-item">
+                <i class="fas fa-file-alt"></i>
+                <span>Reports</span>
+            </a>
+        </nav>
+    </aside>
+    
+    <main class="main-content">
+        
+        <header class="top-header">
+            <div class="page-title">
+                <h1>Conversion Pages 📈</h1>
+                <p>Track your best performing pages</p>
+            </div>
+            <div class="user-info">
+                <i class="fas fa-bell"></i>
+                <div class="user-avatar">
+                    <span>AD</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="conversion-grid">
+            
+            <div class="stats-card">
+                <h3><i class="fas fa-trophy"></i> Top Converting Pages</h3>
+                <div class="conversion-list" id="conversionPagesList">
+                    <!-- Will be added by JS -->
+                </div>
+            </div>
+            
+            <div class="stats-card chart-card">
+                <h3><i class="fas fa-chart-bar"></i> Conversion Rates</h3>
+                <canvas id="conversionBarChart"></canvas>
+            </div>
+            
+            <div class="stats-card full-width">
+                <h3><i class="fas fa-table-list"></i> Detailed Page Performance</h3>
+                <div class="table-container">
+                    <table class="performance-table" id="performanceTable">
+                        <!-- Will be added by JS -->
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+        
+    </main>
+</div>
+
+<script src="../js/data.js"></script>
+<script src="../js/conversion.js"></script>
+<script src="../js/common.js"></script>
+
+</body>
+</html>

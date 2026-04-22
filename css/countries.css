@@ -1,0 +1,85 @@
+/* ========================================
+   COUNTRIES.CSS - Countries & cities page
+   ======================================== */
+
+.countries-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+.geo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.geo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #f8fafc;
+    border-radius: 16px;
+    transition: all 0.3s;
+}
+
+.geo-item:hover {
+    background: #f1f5f9;
+    transform: translateX(5px);
+}
+
+.geo-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+}
+
+.geo-rank {
+    width: 28px;
+    height: 28px;
+    background: #3b82f6;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.geo-percent {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3b82f6;
+}
+
+.geo-bar {
+    width: 150px;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.geo-bar-fill {
+    height: 100%;
+    background: #3b82f6;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .countries-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .full-width {
+        grid-column: span 1;
+    }
+}

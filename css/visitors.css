@@ -1,0 +1,46 @@
+/* ========================================
+   VISITORS.CSS - Visitor types page
+   ======================================== */
+
+.visitors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.visitors-grid canvas {
+    max-height: 300px;
+    width: 100%;
+}
+
+.metrics-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.metric-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #f8fafc;
+    border-radius: 16px;
+}
+
+.metric-name {
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.metric-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3b82f6;
+}
+
+@media (max-width: 768px) {
+    .visitors-grid {
+        grid-template-columns: 1fr;
+    }
+}

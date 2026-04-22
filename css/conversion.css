@@ -1,0 +1,91 @@
+/* ========================================
+   CONVERSION.CSS - Conversion pages page
+   ======================================== */
+
+.conversion-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+.conversion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.conversion-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+    border-radius: 16px;
+    transition: all 0.3s;
+}
+
+.conversion-item:hover {
+    transform: translateX(5px);
+    background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+}
+
+.conversion-name {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.conversion-rate {
+    font-size: 24px;
+    font-weight: bold;
+    color: #22c55e;
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto;
+}
+
+.performance-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.performance-table th,
+.performance-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.performance-table th {
+    background: #f8fafc;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.performance-table tr:hover {
+    background: #f8fafc;
+}
+
+.rate-badge {
+    background: #22c55e;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .conversion-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .full-width {
+        grid-column: span 1;
+    }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    
+<div class="dashboard-container">
+    
+    <!-- ========== Sidebar ========== -->
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fas fa-chart-pie"></i>
+            <span>Analytics Hub</span>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item active">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="pages/traffic.html" class="nav-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Traffic Sources</span>
+            </a>
+            <a href="pages/visitors.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Visitor Types</span>
+            </a>
+            <a href="pages/countries.html" class="nav-item">
+                <i class="fas fa-globe"></i>
+                <span>Countries & Cities</span>
+            </a>
+            <a href="pages/conversion.html" class="nav-item">
+                <i class="fas fa-percent"></i>
+                <span>Conversion Pages</span>
+            </a>
+            <a href="pages/reports.html" class="nav-item">
+                <i class="fas fa-file-alt"></i>
+                <span>Reports</span>
+            </a>
+        </nav>
+    </aside>
+    
+    <!-- ========== Main Content ========== -->
+    <main class="main-content">
+        
+        <!-- Header -->
+        <header class="top-header">
+            <div class="page-title">
+                <h1>Welcome back! 👋</h1>
+                <p>Here's an overview of your website performance</p>
+            </div>
+            <div class="user-info">
+                <i class="fas fa-bell"></i>
+                <div class="user-avatar">
+                    <span>AD</span>
+                </div>
+            </div>
+        </header>
+        
+        <!-- ========== KPI Cards ========== -->
+        <div class="kpi-grid" id="kpiContainer">
+            <!-- Will be added by JavaScript -->
+        </div>
+        
+        <!-- ========== Two Columns Layout ========== -->
+        <div class="dashboard-two-columns">
+            
+            <!-- Right Column: Traffic Sources + Visitor Type -->
+            <div class="right-column">
+                <!-- Traffic Sources Card -->
+                <div class="stats-card">
+                    <h3><i class="fas fa-chart-pie"></i> Traffic Sources</h3>
+                    <div class="traffic-sources" id="trafficSources">
+                        <!-- Will be added by JS -->
+                    </div>
+                </div>
+                
+                <!-- Visitor Type Card -->
+                <div class="stats-card">
+                    <h3><i class="fas fa-user-tag"></i> Visitor Types</h3>
+                    <div class="visitor-types" id="visitorTypes">
+                        <!-- Will be added by JS -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Left Column: Chart -->
+            <div class="left-column">
+                <div class="stats-card chart-card">
+                    <h3><i class="fas fa-calendar-week"></i> Weekly Visits</h3>
+                    <canvas id="weeklyChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ========== Three Columns ========== -->
+        <div class="dashboard-three-columns">
+            
+            <!-- Top Countries -->
+            <div class="stats-card">
+                <h3><i class="fas fa-flag-checkered"></i> Top Countries</h3>
+                <div class="top-list" id="topCountries">
+                    <!-- Will be added by JS -->
+                </div>
+            </div>
+            
+            <!-- Top Cities -->
+            <div class="stats-card">
+                <h3><i class="fas fa-city"></i> Top Cities</h3>
+                <div class="top-list" id="topCities">
+                    <!-- Will be added by JS -->
+                </div>
+            </div>
+            
+            <!-- Top Pages -->
+            <div class="stats-card">
+                <h3><i class="fas fa-file"></i> Top Conversion Pages</h3>
+                <div class="top-list" id="topPages">
+                    <!-- Will be added by JS -->
+                </div>
+            </div>
+        </div>
+        
+    </main>
+</div>
+
+<!-- JavaScript Files -->
+<script src="js/data.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>
