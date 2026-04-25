@@ -31,7 +31,7 @@ analytics-dashboard/
 
 ## 🚀 Live Demo
 
-[https://your-username.github.io/analytics-dashboard/](https://your-username.github.io/analytics-dashboard/)
+[https://nadakhatib.github.io/analytics-dashboard/](https://your-username.github.io/analytics-dashboard/)
 
 ## 📱 Responsive
 
