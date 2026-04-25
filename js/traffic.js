@@ -61,8 +61,9 @@ function loadTrafficDonutChart() {
                 legend: {
                     position: 'bottom',
                     labels: {
-                        font: { family: 'Inter', size: 12 },
-                        padding: 15
+                        font: { family: 'Inter', size: 11 },
+                        padding: 10,
+                        boxWidth: 10
                     }
                 },
                 tooltip: {
@@ -94,7 +95,8 @@ function loadTrafficLineChart() {
                     backgroundColor: 'transparent',
                     borderWidth: 2,
                     tension: 0.4,
-                    pointRadius: 4
+                    pointRadius: 4,
+                    pointHoverRadius: 6
                 },
                 {
                     label: 'Mobile',
@@ -103,7 +105,8 @@ function loadTrafficLineChart() {
                     backgroundColor: 'transparent',
                     borderWidth: 2,
                     tension: 0.4,
-                    pointRadius: 4
+                    pointRadius: 4,
+                    pointHoverRadius: 6
                 }
             ]
         },
@@ -113,17 +116,36 @@ function loadTrafficLineChart() {
             plugins: {
                 legend: {
                     position: 'top',
-                    labels: { font: { family: 'Inter' } }
+                    labels: { 
+                        font: { family: 'Inter', size: 11 },
+                        boxWidth: 10
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.dataset.label + ': ' + context.raw + '%';
+                        }
+                    }
                 }
             },
             scales: {
                 y: {
                     beginAtZero: true,
                     max: 100,
+                    grid: {
+                        color: '#e2e8f0'
+                    },
                     ticks: {
                         callback: function(value) {
                             return value + '%';
-                        }
+                        },
+                        font: { size: 10 }
+                    }
+                },
+                x: {
+                    ticks: {
+                        font: { size: 10 }
                     }
                 }
             }

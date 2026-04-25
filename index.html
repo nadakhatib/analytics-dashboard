@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Analytics Dashboard</title>
     
     <!-- Fonts -->
@@ -22,8 +22,16 @@
     
 <div class="dashboard-container">
     
-    <!-- ========== Sidebar ========== -->
-    <aside class="sidebar">
+    <!-- Mobile Menu Button (Hamburger) -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
         <div class="logo">
             <i class="fas fa-chart-pie"></i>
             <span>Analytics Hub</span>
@@ -57,7 +65,7 @@
         </nav>
     </aside>
     
-    <!-- ========== Main Content ========== -->
+    <!-- Main Content -->
     <main class="main-content">
         
         <!-- Header -->
@@ -74,34 +82,21 @@
             </div>
         </header>
         
-        <!-- ========== KPI Cards ========== -->
-        <div class="kpi-grid" id="kpiContainer">
-            <!-- Will be added by JavaScript -->
-        </div>
+        <!-- KPI Cards -->
+        <div class="kpi-grid" id="kpiContainer"></div>
         
-        <!-- ========== Two Columns Layout ========== -->
+        <!-- Two Columns Layout -->
         <div class="dashboard-two-columns">
-            
-            <!-- Right Column: Traffic Sources + Visitor Type -->
             <div class="right-column">
-                <!-- Traffic Sources Card -->
                 <div class="stats-card">
                     <h3><i class="fas fa-chart-pie"></i> Traffic Sources</h3>
-                    <div class="traffic-sources" id="trafficSources">
-                        <!-- Will be added by JS -->
-                    </div>
+                    <div class="traffic-sources" id="trafficSources"></div>
                 </div>
-                
-                <!-- Visitor Type Card -->
                 <div class="stats-card">
                     <h3><i class="fas fa-user-tag"></i> Visitor Types</h3>
-                    <div class="visitor-types" id="visitorTypes">
-                        <!-- Will be added by JS -->
-                    </div>
+                    <div class="visitor-types" id="visitorTypes"></div>
                 </div>
             </div>
-            
-            <!-- Left Column: Chart -->
             <div class="left-column">
                 <div class="stats-card chart-card">
                     <h3><i class="fas fa-calendar-week"></i> Weekly Visits</h3>
@@ -110,31 +105,19 @@
             </div>
         </div>
         
-        <!-- ========== Three Columns ========== -->
+        <!-- Three Columns -->
         <div class="dashboard-three-columns">
-            
-            <!-- Top Countries -->
             <div class="stats-card">
                 <h3><i class="fas fa-flag-checkered"></i> Top Countries</h3>
-                <div class="top-list" id="topCountries">
-                    <!-- Will be added by JS -->
-                </div>
+                <div class="top-list" id="topCountries"></div>
             </div>
-            
-            <!-- Top Cities -->
             <div class="stats-card">
                 <h3><i class="fas fa-city"></i> Top Cities</h3>
-                <div class="top-list" id="topCities">
-                    <!-- Will be added by JS -->
-                </div>
+                <div class="top-list" id="topCities"></div>
             </div>
-            
-            <!-- Top Pages -->
             <div class="stats-card">
                 <h3><i class="fas fa-file"></i> Top Conversion Pages</h3>
-                <div class="top-list" id="topPages">
-                    <!-- Will be added by JS -->
-                </div>
+                <div class="top-list" id="topPages"></div>
             </div>
         </div>
         
@@ -144,6 +127,7 @@
 <!-- JavaScript Files -->
 <script src="js/data.js"></script>
 <script src="js/dashboard.js"></script>
+<script src="js/common.js"></script>
 
 </body>
 </html>

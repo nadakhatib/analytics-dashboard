@@ -32,6 +32,7 @@
     background: #f8fafc;
     border-radius: 16px;
     transition: all 0.3s;
+    flex-wrap: wrap;
 }
 
 .traffic-detail-item:hover {
@@ -87,12 +88,129 @@
     border-radius: 10px;
 }
 
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+/* Tablet */
 @media (max-width: 1024px) {
     .traffic-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
     
     .full-width {
         grid-column: span 1;
     }
+    
+    .chart-card canvas {
+        max-height: 250px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .traffic-grid {
+        gap: 20px;
+    }
+    
+    .traffic-detail-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .traffic-detail-stats {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .traffic-detail-name {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .progress-bar-full {
+        width: 100%;
+        max-width: 200px;
+        margin: 8px auto 0;
+    }
+    
+    .chart-card canvas {
+        max-height: 220px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .stats-card {
+        padding: 15px;
+    }
+    
+    .stats-card h3 {
+        font-size: 16px;
+    }
+    
+    .traffic-detail-item {
+        padding: 12px;
+    }
+    
+    .traffic-detail-name {
+        font-size: 14px;
+        gap: 8px;
+    }
+    
+    .traffic-detail-name i {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+    
+    .traffic-detail-percent {
+        font-size: 18px;
+    }
+    
+    .traffic-detail-count {
+        font-size: 11px;
+    }
+    
+    .progress-bar-full {
+        max-width: 150px;
+    }
+    
+    .chart-card canvas {
+        max-height: 180px;
+    }
+}
+
+/* ========================================
+   DARK MODE STYLES
+   ======================================== */
+
+body.dark-mode .traffic-detail-item {
+    background: #1e293b;
+}
+
+body.dark-mode .traffic-detail-item:hover {
+    background: #334155;
+}
+
+body.dark-mode .traffic-detail-name {
+    color: #f1f5f9;
+}
+
+body.dark-mode .traffic-detail-percent {
+    color: #f1f5f9;
+}
+
+body.dark-mode .traffic-detail-count {
+    color: #94a3b8;
+}
+
+body.dark-mode .progress-bar-full {
+    background: #334155;
+}
+
+body.dark-mode .traffic-detail-name i {
+    background: #0f172a;
 }

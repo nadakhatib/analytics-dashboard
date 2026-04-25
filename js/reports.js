@@ -44,7 +44,12 @@ function loadWeeklyReport() {
     
     container.innerHTML = `
         <thead>
-            <tr><th>Week</th><th>Visitors</th><th>Conversion Rate</th><th>Bounce Rate</th></tr>
+            <tr>
+                <th>Week</th>
+                <th>Visitors</th>
+                <th>Conversion Rate</th>
+                <th>Bounce Rate</th>
+            </tr>
         </thead>
         <tbody>
             ${weeklyData.map(week => `
@@ -62,9 +67,9 @@ function loadWeeklyReport() {
 // Export functions
 function exportReport(type) {
     if (type === 'PDF') {
-        alert('PDF export feature - Would generate PDF report');
+        alert('📄 PDF export feature - Would generate PDF report');
     } else if (type === 'CSV') {
-        alert('CSV export feature - Would download CSV file');
+        alert('📊 CSV export feature - Would download CSV file');
     } else if (type === 'PRINT') {
         window.print();
     }
@@ -75,8 +80,8 @@ function applyDateRange() {
     const endDate = document.getElementById('endDate').value;
     
     if (startDate && endDate) {
-        alert(`Report filtered from ${startDate} to ${endDate}`);
+        alert(`📅 Report filtered from ${startDate} to ${endDate}`);
     } else {
-        alert('Please select both start and end dates');
+        alert('⚠️ Please select both start and end dates');
     }
 }

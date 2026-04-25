@@ -6,56 +6,56 @@
 .kpi-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 15px;
     margin-bottom: 30px;
 }
 
 .kpi-card {
     background: white;
-    border-radius: 24px;
-    padding: 20px;
+    border-radius: 16px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .kpi-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
 .kpi-info h4 {
-    font-size: 14px;
+    font-size: 12px;
     color: #64748b;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .kpi-number {
-    font-size: 32px;
+    font-size: 22px;
     font-weight: bold;
     color: #1e293b;
 }
 
 .kpi-change {
-    font-size: 12px;
-    margin-top: 8px;
+    font-size: 11px;
+    margin-top: 5px;
     color: #22c55e;
 }
 
 .kpi-icon {
-    width: 55px;
-    height: 55px;
+    width: 40px;
+    height: 40px;
     background: #eff6ff;
-    border-radius: 18px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .kpi-icon i {
-    font-size: 28px;
+    font-size: 20px;
     color: #3b82f6;
 }
 
@@ -79,6 +79,7 @@
     border-radius: 24px;
     padding: 25px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
 }
 
 .stats-card h3 {
@@ -196,24 +197,74 @@
     width: 100%;
 }
 
-/* ========== Responsive ========== */
-@media (max-width: 1200px) {
+/* ========================================
+   DASHBOARD RESPONSIVE
+   ======================================== */
+
+@media (max-width: 1024px) {
     .kpi-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+}
+
+@media (max-width: 768px) {
     .dashboard-two-columns {
         grid-template-columns: 1fr;
     }
     
     .dashboard-three-columns {
         grid-template-columns: 1fr;
-        gap: 20px;
+    }
+    
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-card {
+        padding: 18px;
     }
 }
 
-@media (max-width: 768px) {
-    .kpi-grid {
-        grid-template-columns: 1fr;
+@media (max-width: 480px) {
+    .stats-card {
+        padding: 15px;
+    }
+    
+    .chart-card canvas {
+        max-height: 200px;
+    }
+}
+/* Fix grid to prevent overflow */
+.kpi-grid {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.kpi-card {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.kpi-number {
+    word-break: break-word;
+    font-size: 20px;
+}
+
+@media (max-width: 480px) {
+    .kpi-number {
+        font-size: 18px;
+    }
+    
+    .kpi-info h4 {
+        font-size: 11px;
+    }
+    
+    .kpi-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .kpi-icon i {
+        font-size: 16px;
     }
 }

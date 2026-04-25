@@ -14,6 +14,7 @@ function loadConversionPagesList() {
     
     container.innerHTML = '';
     
+    // Use data from topPagesData or create extended list
     const conversionPages = [
         { name: "Homepage", rate: 30, visitors: "610,706" },
         { name: "Products", rate: 20, visitors: "407,137" },
@@ -55,17 +56,36 @@ function loadConversionBarChart() {
             plugins: {
                 legend: {
                     position: 'top',
-                    labels: { font: { family: 'Inter' } }
+                    labels: { 
+                        font: { family: 'Inter', size: 12 },
+                        boxWidth: 12
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.raw + '%';
+                        }
+                    }
                 }
             },
             scales: {
                 y: {
                     beginAtZero: true,
                     max: 35,
+                    grid: {
+                        color: '#e2e8f0'
+                    },
                     ticks: {
                         callback: function(value) {
                             return value + '%';
-                        }
+                        },
+                        font: { size: 11 }
+                    }
+                },
+                x: {
+                    ticks: {
+                        font: { size: 11 }
                     }
                 }
             }
@@ -87,7 +107,12 @@ function loadPerformanceTable() {
     
     container.innerHTML = `
         <thead>
-            <tr><th>Page Name</th><th>Page Views</th><th>Conversion Rate</th><th>Bounce Rate</th></tr>
+            <tr>
+                <th>Page Name</th>
+                <th>Page Views</th>
+                <th>Conversion Rate</th>
+                <th>Bounce Rate</th>
+            </tr>
         </thead>
         <tbody>
             ${pages.map(page => `

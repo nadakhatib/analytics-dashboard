@@ -26,6 +26,12 @@
     padding: 15px;
     background: #f8fafc;
     border-radius: 16px;
+    transition: all 0.3s;
+}
+
+.metric-item:hover {
+    background: #f1f5f9;
+    transform: translateX(5px);
 }
 
 .metric-name {
@@ -39,8 +45,102 @@
     color: #3b82f6;
 }
 
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .visitors-grid {
+        gap: 20px;
+    }
+    
+    .metric-value {
+        font-size: 20px;
+    }
+    
+    .visitors-grid canvas {
+        max-height: 250px;
+    }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
     .visitors-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
+    
+    .metric-item {
+        padding: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        gap: 8px;
+    }
+    
+    .metric-name {
+        font-size: 14px;
+    }
+    
+    .metric-value {
+        font-size: 18px;
+    }
+    
+    .metrics-list {
+        gap: 12px;
+    }
+    
+    .visitors-grid canvas {
+        max-height: 220px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .stats-card {
+        padding: 15px;
+    }
+    
+    .stats-card h3 {
+        font-size: 16px;
+    }
+    
+    .metric-item {
+        padding: 10px;
+        flex-direction: column;
+        gap: 6px;
+    }
+    
+    .metric-name {
+        font-size: 13px;
+    }
+    
+    .metric-value {
+        font-size: 16px;
+    }
+    
+    .visitors-grid canvas {
+        max-height: 180px;
+    }
+}
+
+/* ========================================
+   DARK MODE STYLES
+   ======================================== */
+
+body.dark-mode .metric-item {
+    background: #1e293b;
+}
+
+body.dark-mode .metric-item:hover {
+    background: #334155;
+}
+
+body.dark-mode .metric-name {
+    color: #f1f5f9;
+}
+
+body.dark-mode .metric-value {
+    color: #3b82f6;
 }

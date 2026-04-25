@@ -59,27 +59,131 @@
     color: #3b82f6;
 }
 
-.geo-bar {
-    width: 150px;
-    height: 8px;
-    background: #e2e8f0;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-top: 5px;
+/* Chart Card */
+.chart-card canvas {
+    max-height: 300px;
+    width: 100%;
 }
 
-.geo-bar-fill {
-    height: 100%;
-    background: #3b82f6;
-    border-radius: 10px;
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .countries-grid {
+        gap: 20px;
+    }
+    
+    .geo-percent {
+        font-size: 16px;
+    }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
     .countries-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
     
     .full-width {
         grid-column: span 1;
+    }
+    
+    .geo-item {
+        padding: 12px;
+    }
+    
+    .geo-name {
+        gap: 10px;
+        font-size: 14px;
+    }
+    
+    .geo-rank {
+        width: 24px;
+        height: 24px;
+        font-size: 11px;
+    }
+    
+    .geo-percent {
+        font-size: 16px;
+    }
+    
+    .chart-card canvas {
+        max-height: 250px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .stats-card {
+        padding: 15px;
+    }
+    
+    .stats-card h3 {
+        font-size: 16px;
+    }
+    
+    .geo-item {
+        padding: 10px;
+    }
+    
+    .geo-name {
+        gap: 8px;
+        font-size: 13px;
+    }
+    
+    .geo-rank {
+        width: 22px;
+        height: 22px;
+        font-size: 10px;
+    }
+    
+    .geo-percent {
+        font-size: 14px;
+    }
+    
+    .chart-card canvas {
+        max-height: 200px;
+    }
+}
+
+/* ========================================
+   DARK MODE STYLES
+   ======================================== */
+
+body.dark-mode .geo-item {
+    background: #1e293b;
+    color: #f1f5f9;
+}
+
+body.dark-mode .geo-item:hover {
+    background: #334155;
+}
+
+body.dark-mode .geo-name {
+    color: #f1f5f9;
+}
+
+body.dark-mode .geo-percent {
+    color: #3b82f6;
+}
+
+body.dark-mode .geo-rank {
+    background: #3b82f6;
+}
+/* Fix geo items on small screens */
+@media (max-width: 480px) {
+    .geo-item {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        gap: 8px;
+    }
+    
+    .geo-name {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }

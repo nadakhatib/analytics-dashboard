@@ -70,17 +70,36 @@ function loadGeoBarChart() {
             plugins: {
                 legend: {
                     position: 'top',
-                    labels: { font: { family: 'Inter' } }
+                    labels: { 
+                        font: { family: 'Inter', size: 12 },
+                        boxWidth: 12
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.raw + '%';
+                        }
+                    }
                 }
             },
             scales: {
                 y: {
                     beginAtZero: true,
-                    max: 25,
+                    max: 35,
+                    grid: {
+                        color: '#e2e8f0'
+                    },
                     ticks: {
                         callback: function(value) {
                             return value + '%';
-                        }
+                        },
+                        font: { size: 11 }
+                    }
+                },
+                x: {
+                    ticks: {
+                        font: { size: 11 }
                     }
                 }
             }

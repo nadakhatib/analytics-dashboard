@@ -29,7 +29,11 @@ function loadVisitorsPieChart() {
             plugins: {
                 legend: {
                     position: 'bottom',
-                    labels: { font: { family: 'Inter' } }
+                    labels: { 
+                        font: { family: 'Inter', size: 12 },
+                        boxWidth: 12,
+                        padding: 10
+                    }
                 },
                 tooltip: {
                     callbacks: {

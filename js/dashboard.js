@@ -171,9 +171,7 @@ function loadWeeklyChart() {
             plugins: {
                 legend: {
                     position: 'top',
-                    labels: {
-                        font: { family: 'Inter' }
-                    }
+                    labels: { font: { family: 'Inter' } }
                 },
                 tooltip: {
                     callbacks: {
